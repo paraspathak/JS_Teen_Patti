@@ -89,4 +89,16 @@ class Triple {
             }
         }        
     }
+    max_suit(){
+        if(this.hand[0].suit_name >= this.hand[1].suit_name && this.hand[0].suit_name >= this.hand[2].suit_name){
+            return this.hand[0];
+        }
+        else if(this.hand[1].suit_name >= this.hand[0].suit_name && this.hand[1].suit_name >= this.hand[2].suit_name){
+            return this.hand[1];
+        }
+        else return this.hand[2];
+    }
+    min_suit(){
+        //only for symmetry, not needed as of yet
+    }
 }
