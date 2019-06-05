@@ -8,6 +8,7 @@ class Table{
         }
         this.rules = {};
         this.hand = [];
+        this.output = new Output(number_players);
     }
     play(){
         //Cannot distribute cards in a single deck
@@ -17,7 +18,7 @@ class Table{
         //Shuffle the deck of card
         console.log("Shufffling deck");
         this.deck.shuffle();
-
+        var c =0;
         //Distribute card to each of the player
         console.log("Distributing cards......");
         for (var i =0; i<this.players.length; i++){
@@ -33,12 +34,13 @@ class Table{
                 console.log(first_card,second_card,third_card);
                 this.deck.print_deck();
             }
-            
             this.players[i].show_to_self();
-            this.rules = new Rules(this.hand, this.hand.length);
-            console.log(this.rules.winner());
-        }
-        
+            this.output.show_card_to_player(first_card.print(),c++);
+            this.output.show_card_to_player(second_card.print(),c++);
+            this.output.show_card_to_player(third_card.print(),c++);
+        }        
+        this.rules = new Rules(this.hand, this.hand.length);
+        console.log("Winner is: ",this.players[this.rules.winner()].name);
     }
 }
 

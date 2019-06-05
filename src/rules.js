@@ -73,8 +73,7 @@ function Highest_row(twod_array, column_number,length, height){
         }
         return index;
     }
-    
-    
+ 
     for (var i = 0; i<height; i++){
         //only look for those with 7th element true
         if(twod_array[i][length-1]){
