@@ -46,7 +46,7 @@ class Triple {
         }
         
         //Color
-        if(first_card.card_suit == second_card.card_suit == third_card.card_suit) { 
+        if(first_card.card_suit == second_card.card_suit && second_card.card_suit == third_card.card_suit) { 
             this.color = true;
         }
         
@@ -72,7 +72,6 @@ class Triple {
         if(this.hand[0].card_name == this.hand[1].card_name == this.hand[2].card_name){
             this.trial = true;
         }
-        console.log(this.hand);
     }
     max(){
         for(var i =0; i<3; i++){

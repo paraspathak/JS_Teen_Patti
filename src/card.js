@@ -5,7 +5,7 @@ class Card {
         this.card_suit = suit_;
     }
     print(){
-        console.log("name: ", this.name, "suit: ", this.suit);
+        return(name_to_string(this.card_name) + " "+ suit_to_string (this.card_suit) );
     }
     show(){
         //make it appear in HTML page
