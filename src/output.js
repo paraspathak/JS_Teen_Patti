@@ -18,19 +18,19 @@ class Output{
             div.style.height = '100px';
             div.style.position = 'absolute';
 
-            if(i==2){
+            if(i==0){
                 div.style.top = "8px";
                 div.style.left = "16px";
             }
-            else if(i ==3){
+            else if(i ==1){
                 div.style.bottom = "8px";
                 div.style.right = "16px";
             }
-            else if(i==0){
+            else if(i==2){
                 div.style.bottom = "8px";
                 div.style.left = "16px";
             }
-            else if (i ==1){
+            else if (i ==3){
                 div.style.top = "8px";
                 div.style.right = "16px";
             }
