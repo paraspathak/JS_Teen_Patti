@@ -21,6 +21,7 @@ class Table{
         var c =0;
         //Distribute card to each of the player
         console.log("Distributing cards......");
+        this.output.room_set_up(this.players);
         for (var i =0; i<this.players.length; i++){
             console.log("Distributing card to:",this.players[i].name);
             var first_card = this.deck.top();
