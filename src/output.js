@@ -58,31 +58,25 @@ class Output{
     //Displays the card received by player
     show_card_to_player(card, number){
         //give an id and store all ids 
-        var add_to = document.getElementById(number);
-        add_to.position = 'absolute';
-
-        if(number==0){
-            add_to.style.top = "8px";
-            add_to.style.left = "16px";
-        }
-        else if(number ==1){
-            add_to.style.bottom = "8px";
-            add_to.style.right = "16px";
-        }
-        else if(number==2){
-            add_to.style.bottom = "8px";
-            add_to.style.left = "16px";
-        }
-        else if (number ==3){
-            add_to.style.top = "8px";
-            add_to.style.right = "16px";
-        }
+		var add_to = document.getElementById("player_screen_tl");
+		if(this.count<3){
+			add_to = document.getElementById("player_screen_tr");
+		}
+		else if(this.count>=3 && this.count<6){
+			add_to = document.getElementById("player_screen_br");
+		}
+		else if(this.count>=6 && this.count<9){
+			add_to = document.getElementById("player_screen_tr");
+		}
+		else{
+			add_to = document.getElementById("player_screen_bl");
+		}
 
         var new_card = document.createElement('td');
         
         new_card.style.border = "solid";
-        new_card.style.height = '150px';
-        new_card.style.width = "70px";
+        new_card.style.height = '200px';
+        new_card.style.width = "145px";
         new_card.innerHTML=card;
         new_card.id = ('user'+number+this.count.toString());
         this.count ++;
