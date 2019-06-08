@@ -78,10 +78,10 @@ class Output{
 			add_to = document.getElementById("player_screen_br");
 		}
 		else if(this.count>=6 && this.count<9){
-			add_to = document.getElementById("player_screen_tr");
+			add_to = document.getElementById("player_screen_bl");
 		}
 		else{
-			add_to = document.getElementById("player_screen_bl");
+			add_to = document.getElementById("player_screen_tr");
 		}
 
         var new_card = document.createElement('td');

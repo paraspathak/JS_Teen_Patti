@@ -48,7 +48,7 @@ class Table{
     }
 }
 
-var table = new Table(2,200,2000,["Damna","Bahadur"]);
+var table = new Table(3,200,2000,["Damna","Bahadur","hahaha"]);
 console.log("Starting the game....")
 
 
