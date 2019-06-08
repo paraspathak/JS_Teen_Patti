@@ -22,7 +22,8 @@ class Table{
         //Distribute card to each of the player
         console.log("Distributing cards......");
         this.output.room_set_up(this.players);
-        
+    }
+    distribute(){
         for (var i =0; i<this.players.length; i++){
             console.log("Distributing card to:",this.players[i].name);
             var first_card = this.deck.top();
@@ -37,9 +38,9 @@ class Table{
                 this.deck.print_deck();
             }
             this.players[i].show_to_self();
-            //this.output.show_card_to_player(first_card.print(),i);
-            //this.output.show_card_to_player(second_card.print(),i);
-            //this.output.show_card_to_player(third_card.print(),i);
+            this.output.show_card_to_player(first_card.print(),i);
+            this.output.show_card_to_player(second_card.print(),i);
+            this.output.show_card_to_player(third_card.print(),i);
         }        
         this.rules = new Rules(this.hand, this.hand.length);
         console.log("Winner is: ",this.players[this.rules.winner()].name);
@@ -48,6 +49,27 @@ class Table{
 
 var table = new Table(2,200,2000,["Damna","Bahadur"]);
 console.log("Starting the game....")
-table.output.distribute_card();
+
+
+document.getElementById("only").addEventListener("click",function(){
+    var item = document.getElementById("only");
+    if(item.className == "play"){
+        console.log(item.className);
+        item.className = "ShowCards";
+        item.style.backgroundColor="red"
+        console.log(item.className);
+        table.output.distribute_card();
+        item.innerHTML= "Show Cards";
+        console.log(item.className);
+    }
+    else if(item.className=="ShowCards"){
+        item.className="play";
+        item.style.backgroundColor="green";
+        table.distribute();
+        item.innerHTML= "Play"
+    }
+});
+
+//table.output.distribute_card();
 table.play();
 console.log("end game");
