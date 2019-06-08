@@ -75,7 +75,7 @@ class Output{
         var new_card = document.createElement('td');
         
         new_card.style.border = "solid";
-        new_card.style.height = '250px';
+        new_card.style.height = '200px';
         new_card.style.width = "145px";
         new_card.innerHTML=card;
         new_card.id = ('user'+number+this.count.toString());
