@@ -52,8 +52,23 @@ class Output{
     //Distributes card animation
     distribute_card(){
         for(var i =0; i<this.number_of_player; i++){
-
+            var    parent_element = document.getElementById("player_screen_tl");
+            if(i==1)    parent_element = document.getElementById("player_screen_br");
+            else if(i==2)    parent_element = document.getElementById("player_screen_bl");
+            else if(i==3)    parent_element = document.getElementById("player_screen_tr");
+            for(var j =0; j<3; j++){
+                var new_card = document.createElement('td');
+                new_card.style.border = "solid";
+                new_card.style.height = '200px';
+                new_card.style.width = "145px";
+                new_card.innerHTML= "JS TEEN PATTI";
+                new_card.id = (toString(i)+toString(j));
+                parent_element.append(new_card);
+            }    
         }
+        
+        
+        
     }
     //Displays the card received by player
     show_card_to_player(card, number){
