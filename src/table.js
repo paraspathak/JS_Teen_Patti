@@ -37,6 +37,7 @@ class Table{
                 console.log(first_card,second_card,third_card);
                 this.deck.print_deck();
             }
+            console.log(i);
             this.players[i].show_to_self();
             this.output.show_card_to_player(first_card.print(),i);
             this.output.show_card_to_player(second_card.print(),i);
@@ -54,17 +55,18 @@ console.log("Starting the game....")
 document.getElementById("only").addEventListener("click",function(){
     var item = document.getElementById("only");
     if(item.className == "play"){
-        console.log(item.className);
+        
         item.className = "ShowCards";
         item.style.backgroundColor="red"
-        console.log(item.className);
+        
         table.output.distribute_card();
         item.innerHTML= "Show Cards";
-        console.log(item.className);
+        
     }
     else if(item.className=="ShowCards"){
         item.className="play";
         item.style.backgroundColor="green";
+        table.output.delete_all();
         table.distribute();
         item.innerHTML= "Play"
     }

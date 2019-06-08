@@ -65,17 +65,14 @@ class Output{
                 new_card.id = (toString(i)+toString(j));
                 parent_element.append(new_card);
             }    
-        }
-        
-        
-        
+        }        
     }
     //Displays the card received by player
     show_card_to_player(card, number){
         //give an id and store all ids 
 		var add_to = document.getElementById("player_screen_tl");
 		if(this.count<3){
-			add_to = document.getElementById("player_screen_tr");
+			add_to = document.getElementById("player_screen_tl");
 		}
 		else if(this.count>=3 && this.count<6){
 			add_to = document.getElementById("player_screen_br");
@@ -104,6 +101,12 @@ class Output{
         }
     }
     delete_all(){
-        this.player_screen.removeChild();
+        for (var i=0; i<this.number_of_player;i++){
+            for(var j=0; j<3;j++){
+                var item = document.getElementById((toString(i)+toString(j)));
+                item.remove();
+            }
+            
+        }
     }
 }
