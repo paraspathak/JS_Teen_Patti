@@ -6,3 +6,66 @@ table {
 td {
   padding: 10px 0;
 }
+
+.game{
+  background-color: aliceblue;
+  color: black;
+  border: 2px solid coral;
+}
+
+.game:hover{
+  background-color: green;
+  color: whitesmoke;
+  border: 2px solid saddlebrown;
+}
+
+
+button{
+  background-color: #4CAf50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.start_new_game{
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.start_new_game:hover{
+  background-color: #4CAF50;
+  color: white;
+}
+
+.play{
+  background-color: slateblue;
+  color: white;
+  border: 2px solid #fa8072;
+}
+
+.play:hover{
+  background-color: red;
+  color: white;
+  border: 2px solid #fa8072;
+}
+
+.ShowCards{
+  background-color: cadetblue;
+  color: aliceblue;
+  border: 2px solid black;
+}
+
+.ShowCards:hover{
+  background-color: #008023;
+  color: aliceblue;
+  border: 2px solid black;
+}
