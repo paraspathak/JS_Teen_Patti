@@ -3,15 +3,6 @@ class Output{
     constructor(number) {
         this.number_of_player = number;
         this.playing_area = document.getElementById("playing_area");
-        this.player_screen = document.getElementById("player_screen");
-        //explore following link
-        //https://stackoverflow.com/questions/2637696/how-to-place-div-side-by-side
-        for (var i =0; i<number; i++){
-            var temp = document.createElement("tr");
-            temp.id=i;
-            temp.style.position = "absolute;"
-            document.getElementById("player_screen").append(temp);
-        }
         this.count = 0;
     }
     //setup the room to denote number of player
@@ -87,7 +78,6 @@ class Output{
             add_to = document.getElementById("player_screen_tr");
             card_number-=9
 		}
-
         var new_card = document.createElement('td');
         
         new_card.style.border = "solid";
@@ -104,7 +94,7 @@ class Output{
             
         }
     }
-    delete_all(){
+    delete_all(){       //Deprecated
         for (var i=0; i<this.number_of_player;i++){
             for(var j=0; j<3;j++){
                 var item = document.getElementById((toString(i)+toString(j)));

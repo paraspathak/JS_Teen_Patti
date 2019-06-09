@@ -48,34 +48,79 @@ class Table{
     }
 }
 
-var table = new Table(3,200,2000,["Damna","Bahadur","hahaha"]);
+var table = {};
 console.log("Starting the game....")
 
+
+document.getElementById("game_setup").addEventListener("click",function(){
+    var item = document.getElementById("game_setup");
+    var other = document.getElementById("get_data");
+    item.style.visibility="hidden";    
+    other.style.visibility="visible";
+        
+});
 
 document.getElementById("only").addEventListener("click",function(){
     var item = document.getElementById("only");
     if(item.className == "play"){
         
         item.className = "ShowCards";
-        item.style.backgroundColor="red"
-        
-        table.output.distribute_card();
         item.innerHTML= "Show Cards";
-        
+        item.style.backgroundColor="cadetblue";
+        item.style.color= "aliceblue";
+        item.style.border = "2px solid black";
+
+        table.output.distribute_card();
     }
     else if(item.className=="ShowCards"){
+        
         item.className="start_new_game";
-        item.style.backgroundColor="green";
-        table.output.delete_all();
+        item.style.backgroundColor="red";
+        item.style.color = "white";
+       
+        empty_screen();
         table.distribute();
-        item.innerHTML= "Play"
+        item.innerHTML= "End Game"
     }
     else if(item.className=="start_new_game"){
-        table.output.delete_all();
+        //Empty the place to store cards
+        empty_screen();
         item.className="play";
+        item.style.backgroundColor = "slateblue";
+        item.style.color= "white";
+
+        item.innerHTML= "Distribute Hand";
+        table = new Table(3,200,2000,["Damna","Bahadur","hahaha"]);
+        table.play();
     }
 });
 
-//table.output.distribute_card();
-table.play();
-console.log("end game");
+
+
+function empty_screen(){
+    //Remove the four cards playing location
+    var first = document.getElementById("player_screen_tl");
+    var second = document.getElementById("player_screen_tr");
+    var third = document.getElementById("player_screen_bl");
+    var fourth = document.getElementById("player_screen_br");
+    while(first.firstChild){
+        first.removeChild(first.firstChild);
+    }
+    while(second.firstChild){
+        second.removeChild(second.firstChild);
+    }
+    while(third.firstChild){
+        third.removeChild(third.firstChild);
+    }
+    while(fourth.firstChild){
+        fourth.removeChild(fourth.firstChild);
+    }
+    /*
+     //Remove the user name's location
+     var playing = document.getElementById("playing_area");
+     while(playing.firstChild){
+         playing.removeChild(playing.firstChild);
+     }
+     */
+}
+
