@@ -11,16 +11,68 @@
 
         </div>
         
-        <div style=" position:absolute; top:50%; left: 50%; font-size: 20px;">
-            <button type="button" id="only" class="play">Show Card</button>            
-        </div>
+        <div id= "get_data">
+            <div style="font-size: 30px"><br>JS Teen Patti<br><br></div>
+            <table style="position: relative;">
+               <tr>
+                <td>
+                    <div style="text-align: left; padding-left: 20px;"> How many Players? </div>
+                </td>
+                <td>
+                    <label>One:
+                        <input type="checkbox" id="1chk" checked="checked">
+                      </label>
+                      
+                      <label class="container">Two:
+                        <input type="checkbox" id="2chk">
+                      </label>
+                      
+                      <label class="container">Three:
+                        <input type="checkbox" id="3chk">
+                      </label>
+                      
+                      <label class="container">Four:
+                        <input type="checkbox" id="4chk">
+                      </label> 
+                </td>
+               </tr>
+               <tr id="0" class="player_rows">
+                   <td>
+                    <div style="text-align: left; padding-left: 20px;"> Player 1's Name? </div>
+                   </td>
+                   <td>
 
-
-        <div id="player_screen1" style="position: absolute;  margin-top: 180px; margin-bottom: 220px;">
-            <table id = "player_screen" style="margin: 50px;">
-
+                   </td>
+               </tr>
+               <tr id="1"class="player_rows">
+                    <td>
+                     <div style="text-align: left; padding-left: 20px;"> Player 2's Name? </div>
+                    </td>
+                    <td>
+ 
+                    </td>
+                </tr>
+                <tr id="2"class="player_rows">
+                    <td>
+                        <div style="text-align: left; padding-left: 20px;"> Player 3's Name? </div>
+                    </td>
+                    <td>
+     
+                    </td>
+                </tr>
+                <tr id="3"class="player_rows">
+                    <td>
+                        <div style="text-align: left; padding-left: 20px;"> Player 4's Name? </div>
+                    </td>
+                    <td>
+     
+                    </td>
+                </tr>
             </table>
         </div>
+        <button type="button" id = "game_setup" class="game" style="visibility: visible; position: absolute; left:45%; top: 45%;">Start Game </button>
+        <button type="button" id="only" class="start_new_game" style="visibility: hidden; position: absolute; left: 45%; top: 45%;">Start New Game</button>            
+
 		
 		<div id="top-left" style="position: absolute;  margin-bottom: 80px; top:160px; left: 20px;">
             <table id = "player_screen_tl">
@@ -53,6 +105,7 @@
         <script src= "src/triple.js"></script>
         <script src= "src/player.js"></script>        
         <script src= "src/table.js"></script>
+        <script src = "src/listener.js"></script>
         
     </body>
 </html>

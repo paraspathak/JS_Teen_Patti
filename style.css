@@ -69,3 +69,19 @@ button{
   color: aliceblue;
   border: 2px solid black;
 }
+
+#get_data{
+  position:absolute; 
+  top:25%; 
+  left: 25%; 
+  font-size: 18px; 
+  visibility: hidden; 
+  height: 50%; 
+  width: 50%; 
+  background-color: antiquewhite;
+  text-align: center;
+}
+
+.player_rows{
+  visibility: hidden;
+}
