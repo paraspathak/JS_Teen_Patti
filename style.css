@@ -8,13 +8,13 @@ td {
 }
 
 .game{
-  background-color: aliceblue;
+  background-color: #f0f5f5;
   color: black;
   border: 2px solid coral;
 }
 
 .game:hover{
-  background-color: green;
+  background-color: #008201;
   color: whitesmoke;
   border: 2px solid saddlebrown;
 }
@@ -34,6 +34,17 @@ button{
   transition-duration: 0.4s;
   cursor: pointer;
 }
+
+#submit:hover{
+  border: 4px solid gold;
+  background-color: #10a10a;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 
 .start_new_game{
   background-color: white; 
@@ -72,11 +83,11 @@ button{
 
 #get_data{
   position:absolute; 
-  top:25%; 
+  top:15%; 
   left: 25%; 
   font-size: 18px; 
   visibility: hidden; 
-  height: 50%; 
+  height: 60%; 
   width: 50%; 
   background-color: antiquewhite;
   text-align: center;
@@ -84,4 +95,14 @@ button{
 
 .player_rows{
   visibility: hidden;
+}
+
+input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom:2px solid #10a10a;
+  background-color: inherit;
 }

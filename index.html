@@ -6,50 +6,50 @@
         </title>
 		<link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    <body bgcolor="whitesmoke">
         <div id = "playing_area">
 
         </div>
         
         <div id= "get_data">
             <div style="font-size: 30px"><br>JS Teen Patti<br><br></div>
-            <table style="position: relative;">
-               <tr>
+            <table style="position: relative; width: 100%">
+                <tr>
                 <td>
                     <div style="text-align: left; padding-left: 20px;"> How many Players? </div>
                 </td>
                 <td>
-                    <label>One:
-                        <input type="checkbox" id="1chk" checked="checked">
+                    <label>One: 
+                        <input type="checkbox" id="1chk">
                       </label>
                       
-                      <label class="container">Two:
+                      <label class="container">Two: 
                         <input type="checkbox" id="2chk">
                       </label>
                       
-                      <label class="container">Three:
+                      <label class="container">Three: 
                         <input type="checkbox" id="3chk">
                       </label>
                       
-                      <label class="container">Four:
+                      <label class="container">Four: 
                         <input type="checkbox" id="4chk">
                       </label> 
                 </td>
-               </tr>
-               <tr id="0" class="player_rows">
+                </tr>
+                <tr id="0" class="player_rows">
                    <td>
                     <div style="text-align: left; padding-left: 20px;"> Player 1's Name? </div>
                    </td>
                    <td>
-
+                        <input type="text" class="input_box" id="0name">
                    </td>
-               </tr>
-               <tr id="1"class="player_rows">
+                </tr>
+                <tr id="1"class="player_rows">
                     <td>
                      <div style="text-align: left; padding-left: 20px;"> Player 2's Name? </div>
                     </td>
                     <td>
- 
+                        <input type="text" class="input_box" id="1name">
                     </td>
                 </tr>
                 <tr id="2"class="player_rows">
@@ -57,7 +57,7 @@
                         <div style="text-align: left; padding-left: 20px;"> Player 3's Name? </div>
                     </td>
                     <td>
-     
+                        <input type="text" class="input_box" id="2name">
                     </td>
                 </tr>
                 <tr id="3"class="player_rows">
@@ -65,8 +65,17 @@
                         <div style="text-align: left; padding-left: 20px;"> Player 4's Name? </div>
                     </td>
                     <td>
-     
+                        <input type="text" class="input_box" id="3name">
                     </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div style="text-align:right;">
+                            <button class="button disabled" id= "submit" style="align-self: inherit;">Start</button>
+                        </div>
+                    </td>
+                    
                 </tr>
             </table>
         </div>
