@@ -64,11 +64,15 @@ document.getElementById("only").addEventListener("click",function(){
         
     }
     else if(item.className=="ShowCards"){
-        item.className="play";
+        item.className="start_new_game";
         item.style.backgroundColor="green";
         table.output.delete_all();
         table.distribute();
         item.innerHTML= "Play"
+    }
+    else if(item.className=="start_new_game"){
+        table.output.delete_all();
+        item.className="play";
     }
 });
 
