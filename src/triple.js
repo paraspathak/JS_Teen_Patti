@@ -46,16 +46,16 @@ class Triple {
         }
         
         //Color
-        if(first_card.card_suit == second_card.card_suit && second_card.card_suit == third_card.card_suit) { 
+        if(first_card.card_suit === second_card.card_suit && second_card.card_suit === third_card.card_suit) { 
             this.color = true;
         }
         
         //Run
-        if((this.hand[2].card_name - this.hand[0].card_name) ==2){
+        if((this.hand[2].card_name - this.hand[0].card_name) ===2){
             this.run = true;
         }
         //Case of A K Q
-        if(this.hand[0].card_name == 1 && this.hand[1].card_name == 12 && this.hand[1].card_name == 13){
+        if(this.hand[0].card_name === 1 && this.hand[1].card_name === 12 && this.hand[1].card_name === 13){
             this.run = true;
         }
 
@@ -64,18 +64,18 @@ class Triple {
             this.color_run = true;
         }
         //Doubles 
-        if(this.hand[0].card_name == this.hand[1]. card_name || this.hand[1].card_name == this.hand[2].card_name){
+        if(this.hand[0].card_name === this.hand[1]. card_name || this.hand[1].card_name === this.hand[2].card_name){
             this.double = true;
         }
 
         //Trail
-        if(this.hand[0].card_name == this.hand[1].card_name == this.hand[2].card_name){
+        if(this.hand[0].card_name === this.hand[1].card_name === this.hand[2].card_name){
             this.trial = true;
         }
     }
     max(){
         for(var i =0; i<3; i++){
-            if(this.hand[i].card_name == 1){
+            if(this.hand[i].card_name === 1){
                 return this.hand[0];
             }
         }

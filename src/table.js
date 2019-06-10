@@ -39,12 +39,40 @@ class Table{
             }
             console.log(i);
             this.players[i].show_to_self();
+            //Pass in the whole card object
             this.output.show_card_to_player(first_card.print(),i);
             this.output.show_card_to_player(second_card.print(),i);
             this.output.show_card_to_player(third_card.print(),i);
         }        
         this.rules = new Rules(this.hand, this.hand.length);
         console.log("Winner is: ",this.players[this.rules.winner()].name);
+        announce_winnner(this.rules.winner());
     }
 }
 
+//same top mistake in algorithm
+
+function announce_winnner(number){
+    console.log(number);
+    
+    var num = 0;
+    
+    if(number==0){
+        document.getElementById("div0").style.backgroundColor="green";
+    }
+    else if(number==1){
+        num =1;
+        document.getElementById("div1").style.backgroundColor="green";
+    }
+    else if(number==2){
+        num =2;
+        document.getElementById("div2").style.backgroundColor="green";
+    } 
+    else if(number==3){
+        num =3;
+        document.getElementById("div3").style.backgroundColor="green";
+    }
+    for(var i=0; i<3;i++){  //is null work on it
+        //document.getElementById((num.toString()+num.toString)).style.borderColor="green";
+    }
+}

@@ -7,17 +7,17 @@ var Suit = Object.freeze({
 });
 
 function suit_to_string(suit_number){ 
-    if(suit_number == 4) return "Spade";
-    if(suit_number == 3) return "Heart";
-    if(suit_number == 2) return "Diamond";
-    if(suit_number == 1) return "Clubs";
+    if(suit_number === 4) return "Spade";
+    if(suit_number === 3) return "Heart";
+    if(suit_number === 2) return "Diamond";
+    if(suit_number === 1) return "Clubs";
 }
 
 function name_to_string(number){
-    if(number == 1) return "A";
-    if(number == 11) return "J";
-    if(number == 12) return "Q";
-    if(number == 13) return "K";
+    if(number === 1) return "A";
+    if(number === 11) return "J";
+    if(number === 12) return "Q";
+    if(number === 13) return "K";
     return number;
 }
 
@@ -26,14 +26,14 @@ function name_to_string(number){
 //Recursive algorithm to find the highest value
 function Highest_row(twod_array, column_number,length, height){
     //Case when maximum card needs to found
-    if(column_number == 5){
+    if(column_number === 5){
         var max_number = 0;
         var index = 0;
         var more_than_one_entry = false;
         for(var i =0; i<height; i++){
-            if(twod_array[i][5].card_name == 1){    //case when there is Aces
+            if(twod_array[i][5].card_name === 1){    //case when there is Aces
                 
-                if(max_number == 14){   //more than once aces
+                if(max_number === 14){   //more than once aces
                     more_than_one_entry = true;
                     twod_array[i][length-1] = false;    //since every thing comes with true
                 }
@@ -45,7 +45,7 @@ function Highest_row(twod_array, column_number,length, height){
                 max_number = twod_array[i][5].card_name;
                 index = i;
             }
-            else if (twod_array[i][5].card_name == max_number){
+            else if (twod_array[i][5].card_name === max_number){
                 twod_array[i][length-1] = false;
                 more_than_one_entry = true;
             }
@@ -60,7 +60,7 @@ function Highest_row(twod_array, column_number,length, height){
     }
 
     //Case when maximum suit needs to be found out
-    if(column_number == 6){
+    if(column_number === 6){
         var max_suit = 0;
         var index = 0;
         for (var i =0; i<height; i++){
@@ -93,14 +93,14 @@ function Highest_row(twod_array, column_number,length, height){
     }
     
     //one true
-    if(num_true_elem==1){
+    if(num_true_elem===1){
         for (var i =0; i<height; i++){
             if(twod_array[i][column_number]){
                 return i;   //return index
             }
         }   
     }
-    else if(num_true_elem == 0) {  //all false
+    else if(num_true_elem === 0) {  //all false
         for (var i =0; i<height; i++){
             twod_array[i][column_number] = true;    //change the entry and recursively call itself
         }
