@@ -53,26 +53,29 @@ class Table{
 //same top mistake in algorithm
 
 function announce_winnner(number){
-    console.log(number);
-    
-    var num = 0;
+    var tl = document.getElementById("player_screen_tl");
+    var tr = document.getElementById("player_screen_tr");
+    var br = document.getElementById("player_screen_br");
+    var bl = document.getElementById("player_screen_bl");
     
     if(number==0){
-        document.getElementById("div0").style.backgroundColor="green";
+        winner(tl);
     }
     else if(number==1){
-        num =1;
-        document.getElementById("div1").style.backgroundColor="green";
+        winner(br);
     }
     else if(number==2){
-        num =2;
-        document.getElementById("div2").style.backgroundColor="green";
+        winner(bl);
     } 
     else if(number==3){
-        num =3;
-        document.getElementById("div3").style.backgroundColor="green";
+        winner(tr);
     }
-    for(var i=0; i<3;i++){  //is null work on it
-        //document.getElementById((num.toString()+num.toString)).style.borderColor="green";
+}
+
+function winner(item){
+    child = item.children;
+    console.log(child);
+    for( var i =0; i<3; i++){
+        child[i].style.borderColor = "green";
     }
 }
