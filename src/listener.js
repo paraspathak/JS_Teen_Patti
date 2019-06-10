@@ -93,7 +93,7 @@ function disability(){
 
 
 submit.addEventListener("click", function(){
-    if(submit.className=="button"){
+    if(submit.className==="button"){
         console.log("here");
         if(one.checked)   num_from_form = 1;
         else if (two.checked) num_from_form =2;
@@ -134,13 +134,13 @@ document.getElementById("only").addEventListener("click",function(){
     var item = document.getElementById("only");
     if(item.className == "play"){
         
-        item.className = "ShowCards";
         item.innerHTML= "Show Cards";
         item.style.backgroundColor="cadetblue";
         item.style.color= "aliceblue";
         item.style.border = "2px solid black";
-
-        table.output.distribute_card();
+        if(table.output.distribute_card()){
+            item.className = "ShowCards";
+        }
     }
     else if(item.className=="ShowCards"){
         
