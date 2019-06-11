@@ -29,6 +29,7 @@ function Highest_row(twod_array, column_number,length, height){
     if(column_number === 5){
         var max_number = 0;
         var index = 0;
+        var preserve_index =0;
         var more_than_one_entry = false;
         for(var i =0; i<height; i++){
             if(twod_array[i][5].card_name === 1){    //case when there is Aces
@@ -48,10 +49,28 @@ function Highest_row(twod_array, column_number,length, height){
             else if (twod_array[i][5].card_name === max_number){
                 twod_array[i][length-1] = false;
                 more_than_one_entry = true;
+                preserve_index=index;
+                index=i;
+
             }
         }
         if(more_than_one_entry){
-            return Highest_row(twod_array,6,length, height);
+            //Work this rule better
+            /*
+            if(twod_array[index][8].card_name==1)
+            twod_array[index][8].card_name=14;
+            if(twod_array[preserve_index][8].card_name==1)
+            twod_array[preserve_index][8].card_name=14;
+            if(twod_array[index][8].card_name<twod_array[preserve_index][8].card_name){
+                return preserve_index;
+            }
+            if(twod_array[index][8].card_name===twod_array[preserve_index][8].card_name){
+                return Highest_row(twod_array,6,length, height);
+            }
+            else{
+                return index;
+            }
+            */
         }
         else{
             return index;
@@ -68,6 +87,9 @@ function Highest_row(twod_array, column_number,length, height){
                 if(twod_array[i][6].card_suit>max_suit){
                     max_suit = twod_array[i][6].card_suit;
                     index = i;
+                }
+                else if(twod_array[i][6].card_suit==max_suit){
+                 //check the second suit and so on;   
                 }
             }
         }
@@ -117,7 +139,7 @@ class Rules {
         //make a 2d array to hold all the entries
         this.score_card = new Array(length_);
         for(var i = 0; i<length_; i++){
-            this.score_card[i] = new Array(8);
+            this.score_card[i] = new Array(9);
         }
         // Trial Color run run color double max_number max_suit
         for(var i = 0; i<length_; i++){
@@ -128,6 +150,7 @@ class Rules {
             this.score_card[i][4] = this.hands[i].double;
             this.score_card[i][5] = this.hands[i].max();
             this.score_card[i][6] = this.hands[i].max_suit();
+            this.score_card[i][8] = this.hands[i].in_between();
             this.score_card[i][7] = true;   //true to identify which rows to look for
         }
 

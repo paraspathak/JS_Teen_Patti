@@ -76,10 +76,13 @@ class Triple {
     max(){
         for(var i =0; i<3; i++){
             if(this.hand[i].card_name === 1){
-                return this.hand[0];
+                return this.hand[0];    //minimum will be stored at last
             }
         }
         return this.hand[2];
+    }
+    in_between(){
+        return this.hand[1];
     }
     min(){
         for(var i =0; i<3; i++){
@@ -96,6 +99,9 @@ class Triple {
             return this.hand[1];
         }
         else return this.hand[2];
+    }
+    in_between(){
+        
     }
     min_suit(){
         //only for symmetry, not needed as of yet
