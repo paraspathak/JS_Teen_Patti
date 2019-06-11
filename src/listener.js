@@ -133,14 +133,14 @@ document.getElementById("game_setup").addEventListener("click",function(){
 document.getElementById("only").addEventListener("click",function(){
     var item = document.getElementById("only");
     if(item.className == "play"){
-        
         item.innerHTML= "Show Cards";
         item.style.backgroundColor="cadetblue";
         item.style.color= "aliceblue";
         item.style.border = "2px solid black";
-        if(table.output.distribute_card()){
+        wait = true;
+        table.output.distribute_card().then(function(){
             item.className = "ShowCards";
-        }
+        });            
     }
     else if(item.className=="ShowCards"){
         

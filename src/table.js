@@ -40,9 +40,9 @@ class Table{
             console.log(i);
             this.players[i].show_to_self();
             //Pass in the whole card object
-            this.output.show_card_to_player(first_card.print(),i);
-            this.output.show_card_to_player(second_card.print(),i);
-            this.output.show_card_to_player(third_card.print(),i);
+            this.output.show_card_to_player(first_card,i);
+            this.output.show_card_to_player(second_card,i);
+            this.output.show_card_to_player(third_card,i);
         }        
         this.rules = new Rules(this.hand, this.hand.length);
         console.log("Winner is: ",this.players[this.rules.winner()].name);
@@ -77,5 +77,6 @@ function winner(item){
     console.log(child);
     for( var i =0; i<3; i++){
         child[i].style.borderColor = "green";
+        child[i].className = "winner";
     }
 }

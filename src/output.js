@@ -90,15 +90,29 @@ class Output{
 		else{
             add_to = document.getElementById("player_screen_tr");
             card_number-=9
-		}
+        }
+        var inner_element = document.createElement('div');
+        inner_element.id ="card_data";
+        inner_element.style.textAlign="center";
+        inner_element.style.paddingTop="45%";
+        inner_element.innerHTML=card.get_suit();
+        if(card.is_red()){
+            inner_element.style.color="red";
+        }
+        inner_element.style.fontSize="35px";
+
+
         var new_card = document.createElement('td');
-        
         new_card.style.border = "solid";
         new_card.style.height = '200px';
         new_card.style.width = "145px";
-        new_card.innerHTML=card;
+        new_card.style.fontSize="23px";
+        new_card.innerHTML=card.get_name();
+        new_card.style.textIndent="10px";
+        new_card.style.paddingRight="10px";
         new_card.id = (toString(number)+toString(card_number));
         this.count ++;
+        new_card.append(inner_element);
         add_to.appendChild(new_card);
     }
     //Show cards of every player
